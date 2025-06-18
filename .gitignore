@@ -13,3 +13,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Hugo build lock file
+.hugo_build.lock
