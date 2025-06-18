@@ -1,14 +1,10 @@
-{{ with resources.Get "css/learn.css" }}
-  {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-  {{ with . | css.TailwindCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
-  {{ end }}
+{{ $css := resources.Get "css/learn.css" }}
+{{ $style := $css | resources.PostCSS }}
+{{ if hugo.IsDevelopment }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+  {{ $style = $style | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
 
 <!-- TOC Styles -->
