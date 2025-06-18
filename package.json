@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css && tailwindcss -i ./assets/css/main.css -o ./static/css/main.css"
+    "build:css": "tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css --config ./tailwind.config.js && tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --config ./tailwind.config.js",
+    "build": "npm run build:css && hugo --gc --minify",
+    "dev": "npm run build:css && hugo server -D"
   },
   "keywords": [],
   "author": "",
