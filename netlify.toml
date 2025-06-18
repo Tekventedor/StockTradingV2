@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && ./node_modules/.bin/tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css && ./node_modules/.bin/tailwindcss -i ./assets/css/main.css -o ./static/css/main.css && hugo --gc --minify"
+  command = "npm install && ./node_modules/.bin/tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css --config ./tailwind.learn.config.js && ./node_modules/.bin/tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --config ./tailwind.config.js && hugo --gc --minify"
   publish = "public"
   environment = { HUGO_VERSION = "0.123.8", HUGO_ENV = "production", HUGO_ENABLEGITINFO = "true", NODE_VERSION = "20" }
 
