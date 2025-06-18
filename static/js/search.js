@@ -203,19 +203,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Learn section articles (verified)
                 { 
                     title: 'Stock Market Basics', 
-                    url: '/learn/article/stock-market-basics/', 
+                    url: '/learn/stock-market-basics/', 
                     type: 'Article', 
                     keywords: ['basics', 'introduction', 'fundamentals']
                 },
                 { 
                     title: 'Market Capitalization', 
-                    url: '/learn/article/market-capitalization/', 
+                    url: '/learn/market-capitalization/', 
                     type: 'Article', 
                     keywords: ['market cap', 'company size', 'valuation']
                 },
                 { 
                     title: 'Trading Strategies', 
-                    url: '/learn/article/trading-strategies/', 
+                    url: '/learn/trading-strategies/', 
                     type: 'Article', 
                     keywords: ['trading', 'strategies', 'techniques']
                 }
