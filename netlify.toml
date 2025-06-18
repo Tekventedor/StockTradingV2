@@ -1,12 +1,7 @@
 [build]
-  command = "npm install && npm run build:css && hugo --gc --minify"
+  command = "npm install && npx tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css && npx tailwindcss -i ./assets/css/main.css -o ./static/css/main.css && hugo --gc --minify"
   publish = "public"
-
-[build.environment]
-  HUGO_VERSION = "0.147.5"
-  HUGO_ENV = "production"
-  HUGO_ENABLEGITINFO = "true"
-  NODE_VERSION = "18"
+  environment = { HUGO_VERSION = "0.123.8", HUGO_ENV = "production", HUGO_ENABLEGITINFO = "true", NODE_VERSION = "20" }
 
 # Remove the redirect rule as Hugo handles routing
 # [[redirects]]
