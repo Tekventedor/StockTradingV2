@@ -56,6 +56,12 @@
             </div>
         </header>
 
+        <!-- TradingView Widget -->
+        <div class="p-8 border-b border-gray-200">
+            {{ $symbol := printf "%s:%s" .Params.exchange .Params.symbol }}
+            {{ partial "tvwidget.html" (dict "symbol" $symbol "height" "500") }}
+        </div>
+
         <!-- Stock Content -->
         <div class="p-8">
             <div class="prose prose-lg @sm:prose-xl max-w-none">
