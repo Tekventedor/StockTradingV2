@@ -7,8 +7,9 @@
         <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
             <div class="tradingview-widget-container h-full">
                 <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                {{ $.Site.Data.market_overview | jsonify | safeJS }}
+                <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+                <script type="text/javascript">
+                  new TradingView.widget({{ $.Site.Data.market_overview | jsonify | safeJS }});
                 </script>
             </div>
         </div>
@@ -135,8 +136,9 @@
                     <div id="marketStatsWidgetContainerParent" class="w-full">
                         <div id="marketStatsWidgetContainer" class="tradingview-widget-container w-full">
                             <div class="tradingview-widget-container__widget h-[500px]"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-                            {{ $.Site.Data.widgets.technical_analysis | jsonify | safeJS }}
+                            <script src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async></script>
+                            <script type="text/javascript">
+                              new TradingView.widget({{ $.Site.Data.widgets.technical_analysis | jsonify | safeJS }});
                             </script>
                         </div>
                     </div>
@@ -145,8 +147,9 @@
                     <span class="text-gray-600">Market Breadth</span>
                     <div class="tradingview-widget-container">
                         <div class="tradingview-widget-container__widget h-[400px]"></div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-                        {{ $.Site.Data.widgets.symbol_overview | jsonify | safeJS }}
+                        <script src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async></script>
+                        <script type="text/javascript">
+                          new TradingView.widget({{ $.Site.Data.widgets.symbol_overview | jsonify | safeJS }});
                         </script>
                     </div>
                 </div>
@@ -158,8 +161,9 @@
         <div class="bg-white rounded-lg shadow-sm p-6 h-[500px] mb-8">
             <div class="tradingview-widget-container h-full">
                 <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
-                {{ $.Site.Data.widgets.market_quotes | jsonify | safeJS }}
+                <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async></script>
+                <script type="text/javascript">
+                  new TradingView.widget({{ $.Site.Data.widgets.market_quotes | jsonify | safeJS }});
                 </script>
             </div>
         </div>
@@ -169,8 +173,9 @@
         <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
             <div class="tradingview-widget-container h-full">
                 <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                {{ $.Site.Data.widgets.screener | jsonify | safeJS }}
+                <script src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async></script>
+                <script type="text/javascript">
+                  new TradingView.widget({{ $.Site.Data.widgets.screener | jsonify | safeJS }});
                 </script>
             </div>
         </div>
@@ -180,8 +185,9 @@
         <div class="bg-white rounded-lg shadow-sm p-6 h-[600px]">
             <div class="tradingview-widget-container h-full">
                 <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                {{ $.Site.Data.widgets.events | jsonify | safeJS }}
+                <script src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async></script>
+                <script type="text/javascript">
+                  new TradingView.widget({{ $.Site.Data.widgets.events | jsonify | safeJS }});
                 </script>
             </div>
         </div>

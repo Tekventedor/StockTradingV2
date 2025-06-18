@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
-    {{ partial "css.html" . }}
+    {{ partial "css.html" (dict "Page" .) }}
     <style>
         @keyframes float {
             0% { transform: translateY(0px); }
