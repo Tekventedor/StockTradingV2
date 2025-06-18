@@ -1,30 +1,10 @@
 [build]
   command = "npm install && npm run build:css && hugo --gc --minify"
   publish = "public"
-  environment = { 
-    HUGO_VERSION = "0.123.8", 
-    HUGO_ENV = "production", 
-    HUGO_ENABLEGITINFO = "true", 
-    NODE_VERSION = "20"
-  }
-
-[build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
+  environment = { HUGO_VERSION = "0.123.8", HUGO_ENV = "production", HUGO_ENABLEGITINFO = "true", NODE_VERSION = "20" }
 
 # Remove the redirect rule as Hugo handles routing
 # [[redirects]]
 #   from = "/*"
 #   to = "/index.html"
 #   status = 200 
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; img-src 'self' https: data:; font-src 'self' https: data:;"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
-    Cache-Control = "public, max-age=0, must-revalidate" 

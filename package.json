@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "description": "Stock Trading Website",
   "scripts": {
-    "dev": "hugo server -D",
-    "build": "hugo --gc --minify",
-    "build:css": "tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css --config ./tailwind.config.js --minify && tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --config ./tailwind.config.js --minify"
+    "build:css:main": "tailwindcss -i ./assets/css/main.css -o ./static/css/main.css --config ./tailwind.config.js",
+    "build:css:learn": "tailwindcss -i ./assets/css/learn.css -o ./static/css/learn.css --config ./tailwind.learn.config.js",
+    "build:css": "npm run build:css:main && npm run build:css:learn",
+    "dev": "hugo server -D"
   },
-  "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.7",
+  "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.31",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.3.5"
   }
 }
