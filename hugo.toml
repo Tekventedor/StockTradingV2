@@ -27,12 +27,12 @@ title = "StockTracker"
   glossary = "glossary"        # Financial terms and definitions
 
 [permalinks]
-  stocks = "/stocks/:contentbasename/"
-  sectors = "/sectors/:contentbasename/"
-  markets = "/markets/:contentbasename/"
-  learn = "/learn/:contentbasename/"
-  courses = "/courses/:contentbasename/"
-  glossary = "/glossary/:contentbasename/"
+  stocks = "/stocks/:filename/"
+  sectors = "/sectors/:filename/"
+  markets = "/markets/:filename/"
+  learn = "/learn/:filename/"
+  courses = "/courses/:filename/"
+  glossary = "/glossary/:filename/"
 
 [menu]
   [[menu.main]]
