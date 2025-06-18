@@ -1,10 +1,1 @@
-{{ $defer := false }}
-{{ if (and . (isset . "Defer")) }}
-  {{ $defer = .Defer }}
-{{ end }}
-
-{{ if eq .Section "markets" }}
-  <link rel="stylesheet" href="/css/v4.css" {{ if $defer }}defer{{ end }}>
-{{ else }}
-  <link rel="stylesheet" href="/css/v3.css" {{ if $defer }}defer{{ end }}>
-{{ end }}
+{{ $defer := false }}{{ with .Defer }}{{ $defer = . }}{{ end }}{{ if eq .Page.Section "markets" }}<link rel="stylesheet" href="/css/v4.css" {{ if $defer }}defer{{ end }}>{{ else }}<link rel="stylesheet" href="/css/v3.css" {{ if $defer }}defer{{ end }}>{{ end }}
