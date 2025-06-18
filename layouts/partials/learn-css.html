@@ -1,0 +1,145 @@
+{{ with (templates.Defer (dict "key" "learn")) }}
+  {{ with resources.Get "css/learn.css" }}
+    {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<!-- TOC Styles -->
+<style>
+    /* TOC Styles */
+    html {
+        scroll-padding-top: 5rem; /* Offset for fixed navbar */
+    }
+    
+    /* Ensure proper positioning context */
+    .lg\:grid {
+        position: relative;
+    }
+    
+    /* TOC container styles */
+    aside.lg\:col-span-3 {
+        position: static;
+    }
+    
+    /* Main content spacing */
+    .lg\:col-span-9 {
+        margin-left: auto;
+    }
+    
+    /* Scrollbar styling */
+    .overflow-y-auto {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(203, 213, 225, 1) transparent;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .overflow-y-auto::-webkit-scrollbar-thumb {
+        background-color: rgba(203, 213, 225, 1);
+        border-radius: 3px;
+    }
+    
+    /* Article content styles */
+    .prose {
+        max-width: none !important;
+    }
+
+    /* Fix list styling */
+    .prose ul,
+    .prose ol {
+        margin: 1em 0;
+        padding-left: 2em;
+        list-style-position: outside;
+    }
+
+    .prose ul {
+        list-style-type: disc;
+    }
+
+    .prose ol {
+        list-style-type: decimal;
+    }
+
+    .prose li {
+        margin: 0.5em 0;
+        padding-left: 0.5em;
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+
+    /* Nested list styling */
+    .prose li > ul,
+    .prose li > ol {
+        margin: 0.5em 0 0.5em 0;
+        padding-left: 2em;
+    }
+
+    .prose li > ul {
+        list-style-type: circle;
+    }
+
+    .prose li > ul > li > ul {
+        list-style-type: square;
+    }
+
+    /* Remove custom bullets and ensure proper text wrapping */
+    .prose ul > li::before,
+    .prose ol > li::before {
+        display: none !important;
+    }
+
+    /* Strong text in lists */
+    .prose li strong {
+        color: inherit;
+        font-weight: 600;
+    }
+
+    /* Ensure proper text wrapping for list items */
+    .prose li p {
+        margin: 0;
+        display: inline;
+    }
+
+    /* TOC styles */
+    .toc-content {
+        @apply text-sm;
+    }
+    
+    .toc-content ul {
+        @apply space-y-1;
+    }
+    
+    .toc-content ul ul {
+        @apply mt-1 ml-3 border-l border-gray-200 pl-3;
+    }
+    
+    .toc-content a {
+        @apply block py-1 text-gray-600 hover:text-blue-600 transition-colors;
+        text-decoration: none;
+    }
+    
+    .toc-content li {
+        @apply leading-normal;
+    }
+
+    @media (max-width: 1024px) {
+        aside.lg\:col-span-3 > div {
+            display: none;
+        }
+    }
+</style> 

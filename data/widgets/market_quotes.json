@@ -1,0 +1,25 @@
+{
+    "width": "100%",
+    "height": "100%",
+    "symbolsGroups": [
+        {
+            "name": "Major Sectors",
+            "originalName": "Indices",
+            "symbols": [
+                {"name": "AMEX:XLK", "displayName": "Technology"},
+                {"name": "AMEX:XLE", "displayName": "Energy"},
+                {"name": "AMEX:XLV", "displayName": "Healthcare"},
+                {"name": "AMEX:XLI", "displayName": "Industrial"},
+                {"name": "AMEX:XLP", "displayName": "Consumer Staples"},
+                {"name": "AMEX:XLY", "displayName": "Consumer Discretionary"},
+                {"name": "AMEX:XLB", "displayName": "Materials"},
+                {"name": "AMEX:XLU", "displayName": "Utilities"},
+                {"name": "AMEX:XLRE", "displayName": "Real Estate"}
+            ]
+        }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "light",
+    "isTransparent": true,
+    "locale": "en"
+} 

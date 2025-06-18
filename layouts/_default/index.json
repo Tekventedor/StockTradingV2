@@ -1,0 +1,30 @@
+{
+    "pages": [
+        {{- $pages := where .Site.RegularPages "Kind" "page" -}}
+        {{- $len := len $pages -}}
+        {{- range $index, $page := $pages }}
+        {
+            "title": {{ .Title | jsonify }},
+            "url": {{ .RelPermalink | jsonify }},
+            "type": {{ if .Section }}{{ .Section | title | jsonify }}{{ else }}"Page"{{ end }},
+            "keywords": [
+                {{ .Title | lower | jsonify }},
+                {{ if .Params.tags }}
+                    {{- $tagsLen := len .Params.tags -}}
+                    {{- range $tagIndex, $tag := .Params.tags -}}
+                        {{ . | lower | jsonify }}{{if ne (add $tagIndex 1) $tagsLen}},{{end}}
+                    {{- end -}}
+                {{- end -}}
+                {{- if .Params.difficulty -}}
+                    ,{{ index .Params.difficulty 0 | lower | jsonify }}
+                {{- end -}}
+                {{- if .Params.topics -}}
+                    {{- range .Params.topics -}}
+                        ,{{ . | lower | jsonify }}
+                    {{- end -}}
+                {{- end -}}
+            ]
+        }{{if ne (add $index 1) $len}},{{end}}
+        {{- end }}
+    ]
+} 

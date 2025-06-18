@@ -1,0 +1,105 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "StockTracker"
+
+[taxonomies]
+  # Primary Navigation
+  market = "markets"           # Global markets (S&P 500, NASDAQ, etc.)
+  stock = "stocks"            # Individual stocks
+  sector = "sectors"          # GICS sectors
+  industry = "industries"     # GICS industry groups
+  
+  # Faceted Navigation
+  market_cap = "market-caps"  # Large-cap, Mid-cap, Small-cap
+  performance = "performances" # Top gainers, losers, most active
+  risk_level = "risk-levels"  # Low, Medium, High
+  
+  # Content Organization
+  category = "categories"     # Broad content groupings
+  tag = "tags"               # Specific topic labels
+  author = "authors"         # Content authors
+  type = "types"             # Content types (analysis, news, tutorial)
+  
+  # Educational Content
+  difficulty = "difficulties"   # Beginner, Intermediate, Advanced
+  topic = "topics"             # Technical Analysis, Fundamental Analysis, etc.
+  course = "courses"           # Structured learning paths
+  glossary = "glossary"        # Financial terms and definitions
+
+[permalinks]
+  stocks = "/stocks/:filename/"
+  sectors = "/sectors/:filename/"
+  markets = "/markets/:filename/"
+  learn = "/learn/article/:contentbasename/"
+  courses = "/courses/:filename/"
+  glossary = "/glossary/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Markets"
+    url = "/markets/"
+    weight = 1
+  [[menu.main]]
+    name = "Stocks"
+    url = "/stocks/"
+    weight = 2
+  [[menu.main]]
+    name = "Sectors"
+    url = "/sectors/"
+    weight = 3
+  [[menu.main]]
+    name = "Learn"
+    url = "/learn/"
+    weight = 4
+
+[build]
+  buildStats = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+
+[build.processing]
+  [build.processing.css]
+    includePaths = ["assets/css"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2

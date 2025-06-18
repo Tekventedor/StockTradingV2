@@ -1,0 +1,10 @@
+{
+    "interval": "1D",
+    "width": "100%",
+    "isTransparent": true,
+    "height": "400",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "light",
+    "studies": ["Volume@tv-basicstudies"]
+} 

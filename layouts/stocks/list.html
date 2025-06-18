@@ -1,0 +1,432 @@
+{{ define "main" }}
+{{ partial "learn-css.html" . }}
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Stock Grid -->
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-6">Top Stocks</h2>
+        
+        <!-- Filter Groups -->
+        <div class="space-y-6 mb-8">
+        <!-- Risk Level Filters -->
+            <div>
+                <h3 class="text-lg font-medium text-gray-900 mb-3">Risk Level</h3>
+                <div class="flex gap-4">
+                    <button onclick="filterStocks('risk', 'all')" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 font-medium active-filter" data-filter="risk">
+                All Levels
+            </button>
+                    <button onclick="filterStocks('risk', 'low')" class="px-6 py-3 bg-green-100 hover:bg-green-200 rounded-lg text-green-800 font-medium" data-filter="risk">
+                Low Risk
+            </button>
+                    <button onclick="filterStocks('risk', 'medium')" class="px-6 py-3 bg-yellow-100 hover:bg-yellow-200 rounded-lg text-yellow-800 font-medium" data-filter="risk">
+                Medium Risk
+            </button>
+                    <button onclick="filterStocks('risk', 'high')" class="px-6 py-3 bg-red-100 hover:bg-red-200 rounded-lg text-red-800 font-medium" data-filter="risk">
+                High Risk
+            </button>
+                </div>
+            </div>
+
+            <!-- Sector Filters -->
+            <div>
+                <h3 class="text-lg font-medium text-gray-900 mb-3">Sector</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="filterStocks('sector', 'all')" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 font-medium active-filter" data-filter="sector">
+                        All Sectors
+                    </button>
+                    <button onclick="filterStocks('sector', 'technology')" class="px-6 py-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium" data-filter="sector">
+                        Technology
+                    </button>
+                    <button onclick="filterStocks('sector', 'financial')" class="px-6 py-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium" data-filter="sector">
+                        Financial
+                    </button>
+                    <button onclick="filterStocks('sector', 'healthcare')" class="px-6 py-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium" data-filter="sector">
+                        Healthcare
+                    </button>
+                    <button onclick="filterStocks('sector', 'automotive')" class="px-6 py-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium" data-filter="sector">
+                        Automotive
+                    </button>
+                    <button onclick="filterStocks('sector', 'conglomerate')" class="px-6 py-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium" data-filter="sector">
+                        Conglomerate
+                    </button>
+                </div>
+            </div>
+
+            <!-- Market Cap Filters -->
+            <div>
+                <h3 class="text-lg font-medium text-gray-900 mb-3">Market Cap</h3>
+                <div class="flex gap-4">
+                    <button onclick="filterStocks('cap', 'all')" class="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-800 font-medium active-filter" data-filter="cap">
+                        All Sizes
+                    </button>
+                    <button onclick="filterStocks('cap', 'mega')" class="px-6 py-3 bg-green-100 hover:bg-green-200 rounded-lg text-green-800 font-medium" data-filter="cap">
+                        Mega Cap
+                    </button>
+                    <button onclick="filterStocks('cap', 'large')" class="px-6 py-3 bg-green-100 hover:bg-green-200 rounded-lg text-green-800 font-medium" data-filter="cap">
+                        Large Cap
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Apple -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="low" 
+                data-sector="technology" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/apple/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                            "symbol": "NASDAQ:AAPL",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Apple (AAPL)</h3>
+                <p class="text-sm text-gray-600 mb-4">Global technology company known for iPhone, Mac, and services</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Technology</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Low Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Microsoft -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="low" 
+                data-sector="technology" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/microsoft/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                            "symbol": "NASDAQ:MSFT",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Microsoft (MSFT)</h3>
+                    <p class="text-sm text-gray-600 mb-4">Leading software and cloud computing company</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Technology</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Low Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Tesla -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="high" 
+                data-sector="automotive" 
+                data-cap="large">
+                <a href="{{ .Site.BaseURL }}/stocks/tesla/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NASDAQ:TSLA",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Tesla (TSLA)</h3>
+                    <p class="text-sm text-gray-600 mb-4">Electric vehicle and clean energy company</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Automotive</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Large Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full">High Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- JPMorgan Chase -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="medium" 
+                data-sector="financial" 
+                data-cap="large">
+                <a href="{{ .Site.BaseURL }}/stocks/jpmorgan/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NYSE:JPM",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">JPMorgan Chase (JPM)</h3>
+                    <p class="text-sm text-gray-600 mb-4">Leading global financial services firm</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Financial</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Large Cap</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Medium Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Nvidia -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="high" 
+                data-sector="technology" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/nvidia/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NASDAQ:NVDA",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Nvidia (NVDA)</h3>
+                    <p class="text-sm text-gray-600 mb-4">AI and graphics processing technology leader</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Technology</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full">High Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Johnson & Johnson -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="low" 
+                data-sector="healthcare" 
+                data-cap="large">
+                <a href="{{ .Site.BaseURL }}/stocks/jnj/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NYSE:JNJ",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Johnson & Johnson (JNJ)</h3>
+                    <p class="text-sm text-gray-600 mb-4">Global healthcare and pharmaceutical company</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Healthcare</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Large Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Low Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Amazon -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="low" 
+                data-sector="technology" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/amazon/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NASDAQ:AMZN",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Amazon (AMZN)</h3>
+                    <p class="text-sm text-gray-600 mb-4">E-commerce and cloud computing giant</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Technology</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Low Risk</span>
+                </div>
+                </a>
+            </div>
+
+            <!-- Meta -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="medium" 
+                data-sector="technology" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/meta/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                                "symbol": "NASDAQ:META",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Meta (META)</h3>
+                    <p class="text-sm text-gray-600 mb-4">Social media and metaverse technology company</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Technology</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Medium Risk</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Berkshire Hathaway -->
+            <div class="stock-card bg-white rounded-lg shadow-sm hover:shadow-md transition-discrete p-6" 
+                data-risk="low" 
+                data-sector="conglomerate" 
+                data-cap="mega">
+                <a href="{{ .Site.BaseURL }}/stocks/berkshire/" class="block">
+                <div class="h-32 mb-4">
+                    <div class="tradingview-widget-container h-full">
+                        <div class="tradingview-widget-container__widget h-full"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                            "symbol": "NYSE:BRK.B",
+                            "width": "100%",
+                            "height": "100%",
+                            "locale": "en",
+                            "dateRange": "12M",
+                            "colorTheme": "light",
+                            "isTransparent": true,
+                            "autosize": true,
+                            "largeChartUrl": ""
+                        }
+                        </script>
+                    </div>
+                </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 hover:text-blue-600">Berkshire Hathaway (BRK.B)</h3>
+                <p class="text-sm text-gray-600 mb-4">Diversified holding company led by Warren Buffett</p>
+                <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Conglomerate</span>
+                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Mega Cap</span>
+                        <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Low Risk</span>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Keep track of active filters
+const activeFilters = {
+    risk: 'all',
+    sector: 'all',
+    cap: 'all'
+};
+
+function filterStocks(filterType, value) {
+    // Update active filter for this type
+    activeFilters[filterType] = value;
+    
+    // Update button styles for this filter type
+    document.querySelectorAll(`button[data-filter="${filterType}"]`).forEach(btn => {
+        btn.classList.remove('active-filter', 'bg-blue-500', 'text-white');
+    });
+    
+    const activeButton = document.querySelector(`button[onclick="filterStocks('${filterType}', '${value}')"]`);
+    activeButton.classList.add('active-filter', 'bg-blue-500', 'text-white');
+    
+    // Apply all active filters
+    document.querySelectorAll('.stock-card').forEach(card => {
+        const matchesRisk = activeFilters.risk === 'all' || card.dataset.risk === activeFilters.risk;
+        const matchesSector = activeFilters.sector === 'all' || card.dataset.sector === activeFilters.sector;
+        const matchesCap = activeFilters.cap === 'all' || card.dataset.cap === activeFilters.cap;
+        
+        if (matchesRisk && matchesSector && matchesCap) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    filterStocks('risk', 'all');
+    filterStocks('sector', 'all');
+    filterStocks('cap', 'all');
+});
+</script>
+
+<style>
+.active-filter {
+    background-color: #3b82f6 !important;
+    color: white !important;
+}
+.transition-discrete {
+    transition: all 0.2s ease-in-out;
+}
+</style>
+{{ end }} 

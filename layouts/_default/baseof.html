@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    {{ partial "css.html" . }}
+    {{ partial "common-styles.html" . }}
+</head>
+<body class="page-gradient min-h-screen">
+    {{ partial "nav.html" . }}
+    <main class="min-h-[calc(100vh-4rem)]">
+        {{ block "main" . }}{{ end }}
+    </main>
+</body>
+</html> 

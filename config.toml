@@ -1,0 +1,46 @@
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Learn"
+    url = "/learn/"
+    weight = 2
+  [[menu.main]]
+    name = "Glossary"
+    url = "/glossary/"
+    weight = 3
+  [[menu.main]]
+    name = "Markets"
+    url = "/markets/"
+    weight = 4 
+
+[taxonomies]
+  difficulty = "difficulty"
+  topic = "topics"
+
+[permalinks]
+  learn = "/learn/:difficulties/:contentbasename/"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json' 

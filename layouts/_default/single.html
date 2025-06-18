@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-8">
+    <article class="prose prose-lg lg:prose-xl max-w-none">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">{{ .Title }}</h1>
+        {{ with .Params.description }}
+            <p class="text-xl text-gray-600 mb-8">{{ . }}</p>
+        {{ end }}
+        <div class="prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-600 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-800">
+            {{ .Content }}
+        </div>
+    </article>
+</div>
+{{ end }} 

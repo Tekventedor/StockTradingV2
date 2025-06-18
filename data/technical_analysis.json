@@ -1,0 +1,9 @@
+{
+    "interval": "1D",
+    "width": "100%",
+    "isTransparent": true,
+    "height": "100%",
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "light"
+} 

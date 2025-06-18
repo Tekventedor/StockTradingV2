@@ -1,0 +1,222 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mt-8 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mt-8 mb-8">{{ .Title }}</h1>
+        <p class="mt-2 text-gray-600">{{ .Description }}</p>
+    </div>
+
+    <!-- ICB Structure Overview -->
+    <div class="mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">11</div>
+                <div class="text-gray-600">Industries</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">20</div>
+                <div class="text-gray-600">Supersectors</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">45</div>
+                <div class="text-gray-600">Sectors</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-4xl font-bold text-blue-600 mb-2">173</div>
+                <div class="text-gray-600">Subsectors</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="mb-8">
+        <div class="bg-white rounded-lg shadow-sm p-4">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <input type="text" 
+                           id="sectorSearch" 
+                           placeholder="Search sectors, industries, or companies..." 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industry Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="industryGrid">
+        <!-- Technology -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow industry-card" data-industry="technology software computer-services hardware">
+            <div class="p-6 cursor-pointer" onclick="toggleIndustry('tech')">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Technology</h3>
+                    <span class="text-blue-600">
+                        <svg class="w-6 h-6 transform transition-transform" id="tech-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </div>
+                <p class="text-gray-600 text-sm mb-2">Software, hardware, and digital services</p>
+            </div>
+            <div class="hidden px-6 pb-6" id="tech-content">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Software and Computer Services</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Computer Services</li>
+                            <li>• Software</li>
+                            <li>• Consumer Digital Services</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Technology Hardware and Equipment</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Semiconductors</li>
+                            <li>• Electronic Components</li>
+                            <li>• Computer Hardware</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Telecommunications -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow industry-card" data-industry="telecommunications equipment service-providers">
+            <div class="p-6 cursor-pointer" onclick="toggleIndustry('telecom')">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Telecommunications</h3>
+                    <span class="text-blue-600">
+                        <svg class="w-6 h-6 transform transition-transform" id="telecom-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </div>
+                <p class="text-gray-600 text-sm mb-2">Network infrastructure and communication services</p>
+            </div>
+            <div class="hidden px-6 pb-6" id="telecom-content">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Telecommunications Equipment</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Network Equipment</li>
+                            <li>• Communication Devices</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Service Providers</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Mobile Networks</li>
+                            <li>• Fixed Line Networks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Energy -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow industry-card" data-industry="energy oil-gas-coal alternative-energy">
+            <div class="p-6 cursor-pointer" onclick="toggleIndustry('energy')">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Energy</h3>
+                    <span class="text-blue-600">
+                        <svg class="w-6 h-6 transform transition-transform" id="energy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </div>
+                <p class="text-gray-600 text-sm mb-2">Traditional and alternative energy solutions</p>
+            </div>
+            <div class="hidden px-6 pb-6" id="energy-content">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Oil, Gas and Coal</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Oil & Gas Producers</li>
+                            <li>• Oil Equipment & Services</li>
+                            <li>• Coal Operations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Alternative Energy</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Renewable Energy</li>
+                            <li>• Energy Storage</li>
+                            <li>• Clean Technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow industry-card" data-industry="healthcare medical-equipment pharmaceuticals biotechnology">
+            <div class="p-6 cursor-pointer" onclick="toggleIndustry('healthcare')">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Healthcare</h3>
+                    <span class="text-blue-600">
+                        <svg class="w-6 h-6 transform transition-transform" id="healthcare-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </div>
+                <p class="text-gray-600 text-sm mb-2">Medical services, equipment, and biotechnology</p>
+            </div>
+            <div class="hidden px-6 pb-6" id="healthcare-content">
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Medical Equipment & Services</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Medical Equipment</li>
+                            <li>• Healthcare Providers</li>
+                            <li>• Medical Supplies</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-2">Pharmaceuticals & Biotechnology</h4>
+                        <ul class="ml-4 space-y-1 text-sm text-gray-600">
+                            <li>• Pharmaceuticals</li>
+                            <li>• Biotechnology Research</li>
+                            <li>• Drug Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- JavaScript for interactivity -->
+<script>
+function toggleIndustry(id) {
+    const content = document.getElementById(`${id}-content`);
+    const icon = document.getElementById(`${id}-icon`);
+    
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+    } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+    }
+}
+
+// Search functionality
+document.getElementById('sectorSearch').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const industryCards = document.querySelectorAll('.industry-card');
+    
+    industryCards.forEach(card => {
+        const industryData = card.dataset.industry.toLowerCase();
+        const industryTitle = card.querySelector('h3').textContent.toLowerCase();
+        const industryDesc = card.querySelector('p').textContent.toLowerCase();
+        
+        if (industryData.includes(searchTerm) || 
+            industryTitle.includes(searchTerm) || 
+            industryDesc.includes(searchTerm)) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+</script>
+{{ end }} 

@@ -1,0 +1,336 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Market Overview -->
+    <div class="mt-8 mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mt-8 mb-8">Global Markets Overview</h1>
+        <!-- Major Indices Widget -->
+        <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
+            <div class="tradingview-widget-container h-full">
+                <div class="tradingview-widget-container__widget h-full"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                {{ $.Site.Data.market_overview | jsonify | safeJS }}
+                </script>
+            </div>
+        </div>
+
+        <!-- Market Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Commodities Overview -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Commodities</h2>
+                <div class="space-y-4">
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Precious Metals</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Track gold, silver, and platinum prices - traditional safe-haven assets
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Energy</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Monitor crude oil and natural gas - key indicators of global economic activity
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Agriculture & Metals</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Follow industrial metals and agricultural commodities - essential raw materials
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonds Overview -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Government Bonds</h2>
+                <div class="space-y-4">
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">US Treasury Yields</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Track US government bond yields across different maturities (2Y-30Y)
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">European Bonds</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Monitor European sovereign debt - German Bunds, Italian BTPs
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Asian Markets</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Follow Asian bond markets, including Japanese government bonds
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forex Overview -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Foreign Exchange</h2>
+                <div class="space-y-4">
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Major Pairs</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Track EUR/USD and GBP/USD - the world's most traded currency pairs
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Asian & Pacific</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Monitor USD/JPY and major Asian currency movements
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-center cursor-pointer">
+                            <span class="text-gray-600 font-medium">Commodity FX</span>
+                            <span class="text-sm text-blue-600">View Charts →</span>
+                        </div>
+                        <div class="mt-2 text-sm text-gray-500">
+                            Follow AUD/USD, USD/CAD - currencies linked to commodity prices
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Stats -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Market Statistics</h2>
+            <!-- Search Input for Market Statistics -->
+            <div class="flex items-center mb-4 relative">
+                <input type="text" id="marketStatsStockInput" placeholder="Enter stock symbol (e.g., NASDAQ:AAPL)" class="flex-1 mr-4 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <button id="loadMarketStatsBtn" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Load Stock</button>
+                <!-- Autocomplete Suggestions -->
+                <div id="stockSuggestions" class="absolute top-full left-0 right-16 bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden max-h-60 overflow-y-auto mt-1">
+                    <!-- Suggestions will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="space-y-16">
+                <div class="flex justify-between items-start">
+                    <div id="marketStatsWidgetContainerParent" class="w-full">
+                        <div id="marketStatsWidgetContainer" class="tradingview-widget-container w-full">
+                            <div class="tradingview-widget-container__widget h-[500px]"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                            {{ $.Site.Data.widgets.technical_analysis | jsonify | safeJS }}
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <span class="text-gray-600">Market Breadth</span>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget h-[400px]"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                        {{ $.Site.Data.widgets.symbol_overview | jsonify | safeJS }}
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Sectors Table -->
+        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Market Sectors Overview</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 h-[500px] mb-8">
+            <div class="tradingview-widget-container h-full">
+                <div class="tradingview-widget-container__widget h-full"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+                {{ $.Site.Data.widgets.market_quotes | jsonify | safeJS }}
+                </script>
+            </div>
+        </div>
+
+        <!-- Stock Market Sector Performance -->
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Stock Market Sector Performance</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
+            <div class="tradingview-widget-container h-full">
+                <div class="tradingview-widget-container__widget h-full"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                {{ $.Site.Data.widgets.screener | jsonify | safeJS }}
+                </script>
+            </div>
+        </div>
+
+        <!-- Economic Calendar -->
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Economic Calendar</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 h-[600px]">
+            <div class="tradingview-widget-container h-full">
+                <div class="tradingview-widget-container__widget h-full"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                {{ $.Site.Data.widgets.events | jsonify | safeJS }}
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add JavaScript for chart links -->
+<script>
+document.querySelectorAll('.group').forEach(group => {
+    group.addEventListener('click', function() {
+        const category = this.querySelector('.text-gray-600').textContent;
+        let symbols = [];
+        
+        // Define symbols for each category
+        const symbolMap = {
+            'Precious Metals': ['XAUUSD', 'XAGUSD', 'XPTUSD'],
+            'Energy': ['WTICOUSD', 'BCOUSD', 'NATGASUSD'],
+            'Agriculture & Metals': ['XCUUSD', 'CORNUSD'],
+            'US Treasury Yields': ['DGS2', 'DGS5', 'DGS10', 'DGS30'],
+            'European Bonds': ['BDGR10Y', 'ITGR10Y'],
+            'Asian Markets': ['JPGR10Y'],
+            'Major Pairs': ['EURUSD', 'GBPUSD'],
+            'Asian & Pacific': ['USDJPY'],
+            'Commodity FX': ['AUDUSD', 'USDCAD']
+        };
+        
+        symbols = symbolMap[category] || [];
+        if (symbols.length > 0) {
+            const url = `https://www.tradingview.com/chart/?symbol=${symbols[0]}`;
+            window.open(url, '_blank');
+        }
+    });
+});
+
+// New JavaScript for dynamic stock search in Market Statistics
+document.addEventListener('DOMContentLoaded', function() {
+    const marketStatsStockInput = document.getElementById('marketStatsStockInput');
+    const loadMarketStatsBtn = document.getElementById('loadMarketStatsBtn');
+    const marketStatsWidgetContainerParent = document.getElementById('marketStatsWidgetContainerParent');
+    const stockSuggestions = document.getElementById('stockSuggestions');
+
+    const popularSymbols = [
+        "NASDAQ:AAPL", "NASDAQ:GOOGL", "NASDAQ:MSFT", "NASDAQ:AMZN", "NYSE:BRK.B", 
+        "NASDAQ:NVDA", "NASDAQ:TSLA", "NYSE:JPM", "NYSE:V", "NYSE:PG",
+        "NASDAQ:NFLX", "NYSE:KO", "NYSE:DIS", "NYSE:WMT", "NYSE:XOM",
+        "NYSE:UNH", "NYSE:HD", "NYSE:BAC", "NYSE:VZ", "NYSE:CVX",
+        "NYSE:PFE", "NYSE:CRM", "NASDAQ:ADBE", "NYSE:NKE", "NYSE:GS",
+        "NASDAQ:PYPL", "NYSE:SBUX", "NASDAQ:INTC", "NYSE:TMO", "NYSE:COST"
+    ];
+
+    function loadTechnicalAnalysisWidget(symbol) {
+        if (!symbol) {
+            marketStatsWidgetContainerParent.innerHTML = '<div class="px-4 py-3 text-sm text-gray-500 italic">Please enter a stock symbol.</div>';
+            return;
+        }
+
+        // Automatically prepend NASDAQ: if no exchange is specified
+        if (symbol.indexOf(':') === -1) {
+            symbol = 'NASDAQ:' + symbol;
+        }
+
+        // Create a new container for the widget to force re-initialization
+        const newWidgetContainer = document.createElement('div');
+        newWidgetContainer.id = 'marketStatsWidgetContainer';
+        newWidgetContainer.className = 'tradingview-widget-container w-full';
+        newWidgetContainer.innerHTML = '<div class="tradingview-widget-container__widget h-[500px]"></div>';
+
+        // Clear existing widget and append the new one
+        marketStatsWidgetContainerParent.innerHTML = '';
+        marketStatsWidgetContainerParent.appendChild(newWidgetContainer);
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
+        script.async = true;
+        
+        const widgetConfig = {
+            "interval": "1M",
+            "width": "100%",
+            "is24Hr": false,
+            "height": "100%",
+            "symbol": symbol,
+            "showIntervalTabs": true,
+            "displayMode": "adaptive",
+            "locale": "en",
+            "colorTheme": "light"
+        };
+
+        script.innerHTML = JSON.stringify(widgetConfig);
+        newWidgetContainer.querySelector('.tradingview-widget-container__widget').appendChild(script);
+
+        // Clear the input field after loading the widget for a better user experience
+        marketStatsStockInput.value = '';
+        stockSuggestions.classList.add('hidden'); // Hide suggestions after loading
+    }
+
+    // Initial load with a default symbol
+    loadTechnicalAnalysisWidget("NASDAQ:AAPL");
+
+    // Event listener for search button click
+    loadMarketStatsBtn.addEventListener('click', function() {
+        loadTechnicalAnalysisWidget(marketStatsStockInput.value.toUpperCase().trim());
+    });
+
+    // Event listener for Enter key press in input field
+    marketStatsStockInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent default form submission
+            loadTechnicalAnalysisWidget(marketStatsStockInput.value.toUpperCase().trim());
+        }
+    });
+
+    // Autocomplete Logic
+    marketStatsStockInput.addEventListener('input', function() {
+        const input = this.value.toUpperCase().trim();
+        if (input.length === 0) {
+            stockSuggestions.classList.add('hidden');
+            return;
+        }
+
+        const filteredSymbols = popularSymbols.filter(symbol => 
+            symbol.includes(input)
+        );
+
+        if (filteredSymbols.length > 0) {
+            stockSuggestions.innerHTML = '';
+            filteredSymbols.forEach(symbol => {
+                const div = document.createElement('div');
+                div.className = 'px-4 py-2 cursor-pointer hover:bg-gray-100';
+                div.textContent = symbol;
+                div.addEventListener('click', function() {
+                    marketStatsStockInput.value = symbol;
+                    loadTechnicalAnalysisWidget(symbol);
+                });
+                stockSuggestions.appendChild(div);
+            });
+            stockSuggestions.classList.remove('hidden');
+        } else {
+            stockSuggestions.classList.add('hidden');
+        }
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!marketStatsStockInput.contains(e.target) && !stockSuggestions.contains(e.target)) {
+            stockSuggestions.classList.add('hidden');
+        }
+    });
+
+});
+</script>
+{{ end }} 
