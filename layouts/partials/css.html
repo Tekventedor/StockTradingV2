@@ -1,5 +1,5 @@
 {{ $css := resources.Get "css/main.css" }}
-{{ $style := $css | resources.PostCSS }}
+{{ $style := $css | css.PostCSS }}
 {{ if hugo.IsDevelopment }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ else }}
