@@ -1,6 +1,6 @@
 {{ $defer := false }}
-{{ with .Defer }}
-  {{ $defer = . }}
+{{ if (and . (isset . "Defer")) }}
+  {{ $defer = .Defer }}
 {{ end }}
 
 {{ if eq .Section "markets" }}
