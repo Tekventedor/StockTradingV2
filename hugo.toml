@@ -30,7 +30,7 @@ title = "StockTracker"
   stocks = "/stocks/:filename/"
   sectors = "/sectors/:filename/"
   markets = "/markets/:filename/"
-  learn = "/learn/article/:contentbasename/"
+  learn = "/learn/article/:filename/"
   courses = "/courses/:filename/"
   glossary = "/glossary/:filename/"
 
