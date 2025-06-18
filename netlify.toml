@@ -1,0 +1,15 @@
+[build]
+  command = "npm install && npm run build:css && hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.147.5"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+  NODE_VERSION = "18"
+
+# Remove the redirect rule as Hugo handles routing
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200 

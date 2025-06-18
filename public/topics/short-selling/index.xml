@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Short Selling on StockTracker</title>
+    <link>//localhost:1313/topics/short-selling/</link>
+    <description>Recent content in Short Selling on StockTracker</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/topics/short-selling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Trading Strategies: Beyond Buying and Holding</title>
+      <link>//localhost:1313/learn/article/trading-strategies/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/learn/article/trading-strategies/</guid>
+      <description>&lt;p&gt;While buy-and-hold investing is a solid foundation, advanced traders can utilize various sophisticated strategies to potentially enhance returns and manage risk. This guide explores advanced trading techniques and strategies.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Advanced trading techniques beyond basic buying and selling&lt;/li&gt;&#xA;&lt;li&gt;Complex order types and their applications&lt;/li&gt;&#xA;&lt;li&gt;Position sizing and risk management strategies&lt;/li&gt;&#xA;&lt;li&gt;Options trading combinations and strategies&lt;/li&gt;&#xA;&lt;li&gt;Market analysis tools and frameworks&lt;/li&gt;&#xA;&lt;li&gt;Implementation guidelines for advanced strategies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strong understanding of basic trading concepts&lt;/li&gt;&#xA;&lt;li&gt;Experience with standard buy/sell orders&lt;/li&gt;&#xA;&lt;li&gt;Knowledge of technical analysis&lt;/li&gt;&#xA;&lt;li&gt;Understanding of options basics&lt;/li&gt;&#xA;&lt;li&gt;Risk management experience&lt;/li&gt;&#xA;&lt;li&gt;Active trading account with advanced features&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;short-selling&#34;&gt;Short Selling&lt;/h2&gt;&#xA;&lt;h3 id=&#34;understanding-short-selling&#34;&gt;Understanding Short Selling&lt;/h3&gt;&#xA;&lt;p&gt;Short selling allows traders to profit from falling stock prices:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

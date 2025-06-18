@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://stocktradingv2.netlify.app/"
 languageCode = "en-us"
 title = "StockTracker"
 

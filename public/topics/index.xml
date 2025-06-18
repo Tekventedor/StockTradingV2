@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Topics on StockTracker</title>
+    <link>//localhost:1313/topics/</link>
+    <description>Recent content in Topics on StockTracker</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/topics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Investing</title>
+      <link>//localhost:1313/topics/advanced-investing/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/advanced-investing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Investing Fundamentals</title>
+      <link>//localhost:1313/topics/investing-fundamentals/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/investing-fundamentals/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Short Selling</title>
+      <link>//localhost:1313/topics/short-selling/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/short-selling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stock Market Basics</title>
+      <link>//localhost:1313/topics/stock-market-basics/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/stock-market-basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trading Strategies</title>
+      <link>//localhost:1313/topics/trading-strategies/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/trading-strategies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Investment Basics</title>
+      <link>//localhost:1313/topics/investment-basics/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/investment-basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stock Valuation</title>
+      <link>//localhost:1313/topics/stock-valuation/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/topics/stock-valuation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

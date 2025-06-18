@@ -1,1 +1,2 @@
-# StockTradingV2
+# StockTracker
+Tracks Stocks

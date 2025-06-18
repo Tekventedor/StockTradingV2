@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StockTracker</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on StockTracker</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Trading Strategies: Beyond Buying and Holding</title>
+      <link>//localhost:1313/learn/article/trading-strategies/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/learn/article/trading-strategies/</guid>
+      <description>&lt;p&gt;While buy-and-hold investing is a solid foundation, advanced traders can utilize various sophisticated strategies to potentially enhance returns and manage risk. This guide explores advanced trading techniques and strategies.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Advanced trading techniques beyond basic buying and selling&lt;/li&gt;&#xA;&lt;li&gt;Complex order types and their applications&lt;/li&gt;&#xA;&lt;li&gt;Position sizing and risk management strategies&lt;/li&gt;&#xA;&lt;li&gt;Options trading combinations and strategies&lt;/li&gt;&#xA;&lt;li&gt;Market analysis tools and frameworks&lt;/li&gt;&#xA;&lt;li&gt;Implementation guidelines for advanced strategies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strong understanding of basic trading concepts&lt;/li&gt;&#xA;&lt;li&gt;Experience with standard buy/sell orders&lt;/li&gt;&#xA;&lt;li&gt;Knowledge of technical analysis&lt;/li&gt;&#xA;&lt;li&gt;Understanding of options basics&lt;/li&gt;&#xA;&lt;li&gt;Risk management experience&lt;/li&gt;&#xA;&lt;li&gt;Active trading account with advanced features&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;short-selling&#34;&gt;Short Selling&lt;/h2&gt;&#xA;&lt;h3 id=&#34;understanding-short-selling&#34;&gt;Understanding Short Selling&lt;/h3&gt;&#xA;&lt;p&gt;Short selling allows traders to profit from falling stock prices:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding the Stock Market: A Beginner&#39;s Guide</title>
+      <link>//localhost:1313/learn/article/stock-market-basics/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/learn/article/stock-market-basics/</guid>
+      <description>&lt;p&gt;The stock market can seem intimidating at first, but understanding the basics will help you start your investment journey with confidence. This guide will explain the fundamental concepts in simple terms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What the stock market is and how it works&lt;/li&gt;&#xA;&lt;li&gt;Essential terminology for beginners&lt;/li&gt;&#xA;&lt;li&gt;How to start investing in stocks&lt;/li&gt;&#xA;&lt;li&gt;Common mistakes to avoid&lt;/li&gt;&#xA;&lt;li&gt;Understanding market movements&lt;/li&gt;&#xA;&lt;li&gt;Best practices for successful investing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Basic understanding of money and savings&lt;/li&gt;&#xA;&lt;li&gt;Access to a computer or smartphone&lt;/li&gt;&#xA;&lt;li&gt;Ability to open a brokerage account&lt;/li&gt;&#xA;&lt;li&gt;Basic math skills&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-the-stock-market&#34;&gt;What is the Stock Market?&lt;/h2&gt;&#xA;&lt;p&gt;The stock market is a place where shares of publicly traded companies are bought and sold. Think of it as a marketplace where:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Apple Inc. (AAPL)</title>
+      <link>//localhost:1313/stocks/aapl/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/aapl/</guid>
+      <description>&lt;h2 id=&#34;company-overview&#34;&gt;Company Overview&lt;/h2&gt;&#xA;&lt;p&gt;Apple Inc. is a global technology leader that designs, manufactures, and markets a wide range of consumer electronics, software, and services. Founded in 1976, the company has become one of the world&amp;rsquo;s most valuable companies through its innovative products and ecosystem.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-products--services&#34;&gt;Key Products &amp;amp; Services&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;iPhone: Smartphone product line&lt;/li&gt;&#xA;&lt;li&gt;Mac: Personal computers&lt;/li&gt;&#xA;&lt;li&gt;iPad: Tablet computers&lt;/li&gt;&#xA;&lt;li&gt;Wearables: Apple Watch, AirPods&lt;/li&gt;&#xA;&lt;li&gt;Services: App Store, Apple Music, iCloud&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;investment-highlights&#34;&gt;Investment Highlights&lt;/h2&gt;&#xA;&lt;h3 id=&#34;strengths&#34;&gt;Strengths&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strong brand recognition and customer loyalty&lt;/li&gt;&#xA;&lt;li&gt;Robust ecosystem of products and services&lt;/li&gt;&#xA;&lt;li&gt;Significant cash reserves&lt;/li&gt;&#xA;&lt;li&gt;High margins and strong cash flow&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;risks&#34;&gt;Risks&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dependence on iPhone sales&lt;/li&gt;&#xA;&lt;li&gt;Supply chain concentration in Asia&lt;/li&gt;&#xA;&lt;li&gt;Intense competition in tech sector&lt;/li&gt;&#xA;&lt;li&gt;Regulatory scrutiny&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;financial-overview&#34;&gt;Financial Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Revenue Growth (5-year avg): XX%&lt;/li&gt;&#xA;&lt;li&gt;Operating Margin: XX%&lt;/li&gt;&#xA;&lt;li&gt;Dividend Yield: XX%&lt;/li&gt;&#xA;&lt;li&gt;P/E Ratio: XX&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;recent-developments&#34;&gt;Recent Developments&lt;/h2&gt;&#xA;&lt;p&gt;Stay updated with the latest news and developments about Apple Inc. through the TradingView widgets above.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Market Capitalization</title>
+      <link>//localhost:1313/learn/article/market-capitalization/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/learn/article/market-capitalization/</guid>
+      <description>&lt;p&gt;Market capitalization (market cap) is one of the most fundamental metrics in stock investing. It tells us the total value of a company&amp;rsquo;s outstanding shares and helps investors make informed decisions about their investments.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;How market capitalization is calculated&lt;/li&gt;&#xA;&lt;li&gt;Different market cap categories and their characteristics&lt;/li&gt;&#xA;&lt;li&gt;Using market cap for investment decisions&lt;/li&gt;&#xA;&lt;li&gt;Important considerations and related concepts&lt;/li&gt;&#xA;&lt;li&gt;Risk assessment using market cap&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Basic understanding of stocks and shares&lt;/li&gt;&#xA;&lt;li&gt;Familiarity with basic math calculations&lt;/li&gt;&#xA;&lt;li&gt;Knowledge of stock market fundamentals&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-market-capitalization&#34;&gt;What is Market Capitalization?&lt;/h2&gt;&#xA;&lt;p&gt;Market capitalization is calculated by multiplying a company&amp;rsquo;s current stock price by its total number of outstanding shares:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Apple Inc. (AAPL)</title>
+      <link>//localhost:1313/stocks/apple/</link>
+      <pubDate>Sat, 23 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/apple/</guid>
+      <description>&lt;h2 id=&#34;company-overview&#34;&gt;Company Overview&lt;/h2&gt;&#xA;&lt;p&gt;Apple Inc. is a global technology leader that designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. The company is known for its iconic products including the iPhone, Mac, iPad, and Apple Watch, as well as services like Apple Music, Apple TV+, and Apple Pay.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-products--services&#34;&gt;Key Products &amp;amp; Services&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;iPhone&lt;/strong&gt;: Flagship smartphone line&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;: Personal computers and laptops&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;iPad&lt;/strong&gt;: Tablet computer line&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Wearables&lt;/strong&gt;: Apple Watch and AirPods&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Services&lt;/strong&gt;: App Store, Apple Music, iCloud, Apple TV+&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;financial-highlights&#34;&gt;Financial Highlights&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Strong balance sheet with significant cash reserves&lt;/li&gt;&#xA;&lt;li&gt;Consistent revenue growth&lt;/li&gt;&#xA;&lt;li&gt;High profit margins&lt;/li&gt;&#xA;&lt;li&gt;Regular dividend payments&lt;/li&gt;&#xA;&lt;li&gt;Active share buyback program&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;investment-considerations&#34;&gt;Investment Considerations&lt;/h2&gt;&#xA;&lt;h3 id=&#34;strengths&#34;&gt;Strengths&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Brand power and customer loyalty&lt;/li&gt;&#xA;&lt;li&gt;Ecosystem integration&lt;/li&gt;&#xA;&lt;li&gt;Innovation track record&lt;/li&gt;&#xA;&lt;li&gt;Strong financial position&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;risks&#34;&gt;Risks&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Product cycle dependency&lt;/li&gt;&#xA;&lt;li&gt;Supply chain concentration&lt;/li&gt;&#xA;&lt;li&gt;Regulatory scrutiny&lt;/li&gt;&#xA;&lt;li&gt;Market competition&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;recent-developments&#34;&gt;Recent Developments&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Expansion into new markets&lt;/li&gt;&#xA;&lt;li&gt;Focus on services revenue&lt;/li&gt;&#xA;&lt;li&gt;Investment in AI and AR technologies&lt;/li&gt;&#xA;&lt;li&gt;Supply chain diversification efforts&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Alphabet Inc.</title>
+      <link>//localhost:1313/stocks/alphabet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/alphabet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Amazon.com, Inc.</title>
+      <link>//localhost:1313/stocks/amazon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/amazon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Berkshire Hathaway Inc.</title>
+      <link>//localhost:1313/stocks/berkshire/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/berkshire/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Broadcom Inc.</title>
+      <link>//localhost:1313/stocks/broadcom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/broadcom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Eli Lilly and Company</title>
+      <link>//localhost:1313/stocks/eli-lilly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/eli-lilly/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Meta Platforms, Inc.</title>
+      <link>//localhost:1313/stocks/meta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/meta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microsoft Corporation</title>
+      <link>//localhost:1313/stocks/microsoft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/microsoft/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NVIDIA Corporation</title>
+      <link>//localhost:1313/stocks/nvidia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/nvidia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tesla, Inc.</title>
+      <link>//localhost:1313/stocks/tesla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/stocks/tesla/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
