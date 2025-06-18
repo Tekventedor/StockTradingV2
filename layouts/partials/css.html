@@ -20,4 +20,19 @@
 <link rel="stylesheet" href="/css/main.v4.css">
 
 <!-- Learn section CSS -->
-<link rel="stylesheet" href="/css/learn.css"> 
+<link rel="stylesheet" href="/css/learn.css">
+
+{{ $params := dict "Defer" false }}
+{{ with . }}
+  {{ $params = merge $params . }}
+{{ end }}
+
+{{ $defer := false }}
+{{ with .Defer }}
+  {{ $defer = . }}
+{{ end }}
+
+{{ if eq .Section "markets" }}
+  <link rel="stylesheet" href="/css/v4.css" {{ if $defer }}defer{{ end }}>
+{{ else }}
+  <link rel="stylesheet" href="/css/v3.css" {{ if $defer }}defer{{ end }}> 
