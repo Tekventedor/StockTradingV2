@@ -1,8 +1,23 @@
-{{ $css := resources.Get "css/main.css" }}
-{{ $style := $css | css.PostCSS }}
-{{ if hugo.IsDevelopment }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ else }}
-  {{ $style = $style | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
-{{ end }} 
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ with resources.Get "css/main.css" }}
+    {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<!-- Tailwind v3 -->
+<link rel="stylesheet" href="/css/main.css">
+
+<!-- Tailwind v4 -->
+<link rel="stylesheet" href="/css/main.v4.css">
+
+<!-- Learn section CSS -->
+<link rel="stylesheet" href="/css/learn.css"> 

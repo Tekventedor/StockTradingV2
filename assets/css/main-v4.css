@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for v4 */
+@layer components {
+  .page-gradient {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+} 

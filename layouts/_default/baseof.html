@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-    {{ partial "css.html" . }}
+    {{ if eq .Section "markets" }}
+    <!-- Markets section uses Tailwind v4 -->
+    <link rel="stylesheet" href="/css/v4.css">
+    {{ else }}
+    <!-- Default to Tailwind v3 -->
+    <link rel="stylesheet" href="/css/v3.css">
+    {{ end }}
     {{ partial "common-styles.html" . }}
 </head>
 <body class="page-gradient min-h-screen">

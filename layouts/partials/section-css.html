@@ -1,0 +1,10 @@
+{{ if eq .Section "learn" }}
+    <!-- Learn section uses Tailwind v3 -->
+    <link rel="stylesheet" href="/css/learn.css">
+{{ else if eq .Section "markets" }}
+    <!-- Markets section uses Tailwind v4 -->
+    <link rel="stylesheet" href="/css/main.v4.css">
+{{ else }}
+    <!-- Default to Tailwind v3 -->
+    <link rel="stylesheet" href="/css/main.css">
+{{ end }} 
