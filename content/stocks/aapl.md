@@ -1,5 +1,7 @@
 ---
 title: "Apple Inc. (AAPL)"
+exchange: NASDAQ
+symbol: AAPL
 date: 2025-05-23
 description: "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide."
 stocks: ["NASDAQ:AAPL"]

@@ -15,4 +15,6 @@ key_stats:
   pe_ratio: "~60"
   dividend_yield: "N/A"
   beta: "1.3"
---- 
+---
+
+Amazon is the world's largest e-commerce platform and a leader in cloud computing through AWS. 

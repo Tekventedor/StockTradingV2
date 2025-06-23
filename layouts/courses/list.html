@@ -5,9 +5,37 @@
         <div class="bg-white rounded-lg shadow-sm p-4 h-[400px]">
             <div class="tradingview-widget-container h-full">
                 <div class="tradingview-widget-container__widget h-full"></div>
-                <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+                <script src="https://s3.tradingview.com/tv.js"></script>
                 <script type="text/javascript">
-                  new TradingView.widget({{ $.Site.Data.widgets.market_overview | jsonify | safeJS }});
+                  document.addEventListener('DOMContentLoaded', function() {
+                    if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                      new TradingView.widget({
+                        container_id: undefined,
+                        type: "market_overview",
+                        width: "100%",
+                        height: 400,
+                        colorTheme: "light",
+                        dateRange: "12M",
+                        showChart: true,
+                        isTransparent: true,
+                        showSymbolLogo: true,
+                        showFloatingTooltip: false,
+                        tabs: [
+                          {
+                            title: "Indices",
+                            symbols: [
+                              { s: "FOREXCOM:SPXUSD", d: "S&P 500" },
+                              { s: "FOREXCOM:NSXUSD", d: "Nasdaq 100" },
+                              { s: "FOREXCOM:DOW", d: "Dow 30" },
+                              { s: "INDEX:NKY", d: "Nikkei 225" },
+                              { s: "INDEX:DEU30", d: "DAX Index" },
+                              { s: "FOREXCOM:UKXGBP", d: "FTSE 100" }
+                            ]
+                          }
+                        ]
+                      });
+                    }
+                  });
                 </script>
             </div>
         </div>
