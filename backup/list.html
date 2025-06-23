@@ -5,12 +5,38 @@
         <h1 class="text-3xl font-bold text-gray-900 mt-8 mb-8">Global Markets Overview</h1>
         <!-- Major Indices Widget -->
         <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
-            <div class="tradingview-widget-container h-full">
-                <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                {{ $.Site.Data.market_overview | jsonify | safeJS }}
-                </script>
-            </div>
+            <div id="tv-market-overview" class="tradingview-widget-container h-full"></div>
+            <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                    new TradingView.widget({
+                        container_id: "tv-market-overview",
+                        type: "market_overview",
+                        width: "100%",
+                        height: 600,
+                        colorTheme: "light",
+                        dateRange: "12M",
+                        showChart: true,
+                        isTransparent: true,
+                        showSymbolLogo: true,
+                        showFloatingTooltip: false,
+                        tabs: [
+                            {
+                                title: "Indices",
+                                symbols: [
+                                    { s: "FOREXCOM:SPXUSD", d: "S&P 500" },
+                                    { s: "FOREXCOM:NSXUSD", d: "Nasdaq 100" },
+                                    { s: "FOREXCOM:DOW", d: "Dow 30" },
+                                    { s: "INDEX:NKY", d: "Nikkei 225" },
+                                    { s: "INDEX:DEU30", d: "DAX Index" },
+                                    { s: "FOREXCOM:UKXGBP", d: "FTSE 100" }
+                                ]
+                            }
+                        ]
+                    });
+                }
+            });
+            </script>
         </div>
 
         <!-- Market Details Grid -->
@@ -124,57 +150,178 @@
             <div class="space-y-8">
                 <div class="flex justify-between items-start">
                     <span class="text-gray-600">Trading Volume</span>
-                    <div class="tradingview-widget-container">
-                        <div class="tradingview-widget-container__widget h-[400px]"></div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-                        {{ $.Site.Data.widgets.technical_analysis | jsonify | safeJS }}
-                        </script>
-                    </div>
+                    <div id="tv-technical-analysis" class="tradingview-widget-container h-[400px]"></div>
+                    <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function() {
+                        if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                            new TradingView.widget({
+                                container_id: "tv-technical-analysis",
+                                type: "technical_analysis",
+                                width: "100%",
+                                height: 400,
+                                interval: "1D",
+                                isTransparent: true,
+                                showIntervalTabs: true,
+                                locale: "en",
+                                colorTheme: "light",
+                                symbol: "NASDAQ:AAPL"
+                            });
+                        }
+                    });
+                    </script>
                 </div>
                 <div class="flex justify-between items-start">
                     <span class="text-gray-600">Market Breadth</span>
-                    <div class="tradingview-widget-container">
-                        <div class="tradingview-widget-container__widget h-[400px]"></div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
-                        {{ $.Site.Data.widgets.symbol_overview | jsonify | safeJS }}
-                        </script>
-                    </div>
+                    <div id="tv-symbol-overview" class="tradingview-widget-container h-[400px]"></div>
+                    <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function() {
+                        if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                            new TradingView.widget({
+                                container_id: "tv-symbol-overview",
+                                type: "symbol_overview",
+                                width: "100%",
+                                height: 400,
+                                symbols: [
+                                    ["NASDAQ:AAPL", "Apple"],
+                                    ["NASDAQ:MSFT", "Microsoft"],
+                                    ["NASDAQ:GOOGL", "Google"],
+                                    ["NASDAQ:AMZN", "Amazon"]
+                                ],
+                                chartOnly: false,
+                                locale: "en",
+                                colorTheme: "light",
+                                autosize: false,
+                                showVolume: false,
+                                showMA: false,
+                                hideDateRanges: false,
+                                hideMarketStatus: false,
+                                hideSymbolLogo: false,
+                                scalePosition: "right",
+                                scaleMode: "Normal",
+                                fontFamily: "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                fontSize: "10",
+                                noTimeScale: false,
+                                valuesTracking: "1",
+                                changeMode: "price-and-percent",
+                                chartType: "area",
+                                maLineColor: "#2962FF",
+                                maLineWidth: 1,
+                                maLength: 9,
+                                lineWidth: 2,
+                                lineType: 0
+                            });
+                        }
+                    });
+                    </script>
                 </div>
             </div>
         </div>
 
         <!-- Market Sectors Table -->
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Market Sectors Overview</h2>
-        <div class="bg-white rounded-lg shadow-sm p-6 h-[500px] mb-8">
-            <div class="tradingview-widget-container h-full">
-                <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
-                {{ $.Site.Data.widgets.market_quotes | jsonify | safeJS }}
-                </script>
-            </div>
-        </div>
+        <div id="tv-market-quotes" class="bg-white rounded-lg shadow-sm p-6 h-[500px] mb-8"></div>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                new TradingView.widget({
+                    container_id: "tv-market-quotes",
+                    type: "market_quotes",
+                    width: "100%",
+                    height: 500,
+                    colorTheme: "light",
+                    isTransparent: true,
+                    locale: "en",
+                    symbolsGroups: [
+                        {
+                            name: "Indices",
+                            symbols: [
+                                { name: "FOREXCOM:SPXUSD" },
+                                { name: "FOREXCOM:NSXUSD" },
+                                { name: "FOREXCOM:DOW" },
+                                { name: "INDEX:NKY" },
+                                { name: "INDEX:DEU30" },
+                                { name: "FOREXCOM:UKXGBP" }
+                            ]
+                        },
+                        {
+                            name: "Commodities",
+                            symbols: [
+                                { name: "CME_MINI:ES1!" },
+                                { name: "CME:6E1!" },
+                                { name: "COMEX:GC1!" },
+                                { name: "CBOT:ZC1!" }
+                            ]
+                        },
+                        {
+                            name: "Bonds",
+                            symbols: [
+                                { name: "CME:GE1!" },
+                                { name: "CBOT:ZB1!" },
+                                { name: "CBOT:UB1!" },
+                                { name: "EUREX:FGBL1!" },
+                                { name: "EUREX:FBTP1!" },
+                                { name: "EUREX:FGBM1!" }
+                            ]
+                        },
+                        {
+                            name: "Forex",
+                            symbols: [
+                                { name: "FX:EURUSD" },
+                                { name: "FX:GBPUSD" },
+                                { name: "FX:USDJPY" },
+                                { name: "FX:USDCHF" },
+                                { name: "FX:AUDUSD" },
+                                { name: "FX:USDCAD" }
+                            ]
+                        }
+                    ],
+                    showSymbolLogo: true
+                });
+            }
+        });
+        </script>
 
         <!-- Stock Market Sector Performance -->
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Stock Market Sector Performance</h2>
-        <div class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8">
-            <div class="tradingview-widget-container h-full">
-                <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                {{ $.Site.Data.widgets.screener | jsonify | safeJS }}
-                </script>
-            </div>
-        </div>
+        <div id="tv-market-screener" class="bg-white rounded-lg shadow-sm p-6 h-[600px] mb-8"></div>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                new TradingView.widget({
+                    container_id: "tv-market-screener",
+                    type: "screener",
+                    width: "100%",
+                    height: 600,
+                    colorTheme: "light",
+                    isTransparent: true,
+                    locale: "en",
+                    defaultColumn: "overview",
+                    screener_type: "fundamental",
+                    displayCurrency: "USD"
+                });
+            }
+        });
+        </script>
 
         <!-- Economic Calendar -->
         <h2 class="text-2xl font-bold text-gray-900 mb-4">Economic Calendar</h2>
-        <div class="bg-white rounded-lg shadow-sm p-6 h-[600px]">
-            <div class="tradingview-widget-container h-full">
-                <div class="tradingview-widget-container__widget h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                {{ $.Site.Data.widgets.events | jsonify | safeJS }}
-                </script>
-            </div>
-        </div>
+        <div id="tv-market-events" class="bg-white rounded-lg shadow-sm p-6 h-[600px]"></div>
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+                new TradingView.widget({
+                    container_id: "tv-market-events",
+                    type: "events",
+                    width: "100%",
+                    height: 600,
+                    colorTheme: "light",
+                    isTransparent: true,
+                    locale: "en",
+                    importanceFilter: "-1,0,1"
+                });
+            }
+        });
+        </script>
     </div>
 </div>
 
