@@ -1,177 +1,195 @@
 {{ define "main" }}
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <!-- Market Overview -->
+    <!-- Load tv.js ONCE at the top -->
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+      function tvReady(callback) {
+        if (typeof TradingView !== 'undefined' && typeof TradingView.widget === 'function') {
+          callback();
+        } else {
+          setTimeout(function() { tvReady(callback); }, 50);
+        }
+      }
+    </script>
+    <!-- Global Markets Overview (Programmatic TradingView) -->
     <div class="mt-8 mb-8">
         <h1 class="text-3xl font-bold text-gray-900 mt-8 mb-8">Global Markets Overview</h1>
-        <!-- Major Indices Widget -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div class="tradingview-widget-container" style="height: 500px;">
-            <div class="tradingview-widget-container__widget"></div>
-            <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
-            <script type="text/javascript">
-              new TradingView.widget({
-                ...$.Site.Data.market_overview,
-                width: "100%",
-                height: "500",
-                isTransparent: false
-              });
-            </script>
-          </div>
-        </div>
+        <div id="tv-global-markets" class="bg-white rounded-lg shadow-sm p-6 mb-8 w-full h-[500px]"></div>
+        <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            tvReady(function() {
+              new TradingView.widget(Object.assign({},
+                $.Site.Data.market_overview,
+                {
+                  type: "market_overview",
+                  container_id: "tv-global-markets",
+                  autosize: true,
+                  isTransparent: false
+                }
+              ));
+            });
+          });
+        </script>
+    </div>
 
-        <!-- Market Details Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <!-- Commodities Overview -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Commodities</h2>
-                <div class="space-y-4">
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Precious Metals</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Track gold, silver, and platinum prices - traditional safe-haven assets
-                        </div>
+    <!-- Market Details Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Commodities Overview -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Commodities</h2>
+            <div class="space-y-4">
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Precious Metals</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
                     </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Energy</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Monitor crude oil and natural gas - key indicators of global economic activity
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Agriculture & Metals</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Follow industrial metals and agricultural commodities - essential raw materials
-                        </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Track gold, silver, and platinum prices - traditional safe-haven assets
                     </div>
                 </div>
-            </div>
-
-            <!-- Bonds Overview -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Government Bonds</h2>
-                <div class="space-y-4">
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">US Treasury Yields</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Track US government bond yields across different maturities (2Y-30Y)
-                        </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Energy</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
                     </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">European Bonds</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Monitor European sovereign debt - German Bunds, Italian BTPs
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Asian Markets</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Follow Asian bond markets, including Japanese government bonds
-                        </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Monitor crude oil and natural gas - key indicators of global economic activity
                     </div>
                 </div>
-            </div>
-
-            <!-- Forex Overview -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <h2 class="text-xl font-semibold text-gray-900 mb-4">Foreign Exchange</h2>
-                <div class="space-y-4">
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Major Pairs</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Track EUR/USD and GBP/USD - the world's most traded currency pairs
-                        </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Agriculture & Metals</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
                     </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Asian & Pacific</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Monitor USD/JPY and major Asian currency movements
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-center cursor-pointer">
-                            <span class="text-gray-600 font-medium">Commodity FX</span>
-                            <span class="text-sm text-blue-600">View Charts →</span>
-                        </div>
-                        <div class="mt-2 text-sm text-gray-500">
-                            Follow AUD/USD, USD/CAD - currencies linked to commodity prices
-                        </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Follow industrial metals and agricultural commodities - essential raw materials
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div class="tradingview-widget-container" style="height: 500px;">
-            <div class="tradingview-widget-container__widget"></div>
-            <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async></script>
-            <script type="text/javascript">
-              new TradingView.widget({
-                ...$.Site.Data.widgets.market_quotes,
-                width: "100%",
-                height: "500",
-                isTransparent: false
-              });
-            </script>
-          </div>
+        <!-- Bonds Overview -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Government Bonds</h2>
+            <div class="space-y-4">
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">US Treasury Yields</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Track US government bond yields across different maturities (2Y-30Y)
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">European Bonds</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Monitor European sovereign debt - German Bunds, Italian BTPs
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Asian Markets</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Follow Asian bond markets, including Japanese government bonds
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Stock Market Sector Performance -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div class="tradingview-widget-container" style="height: 500px;">
-            <div class="tradingview-widget-container__widget"></div>
-            <script src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async></script>
-            <script type="text/javascript">
-              new TradingView.widget({
-                ...$.Site.Data.widgets.screener,
-                width: "100%",
-                height: "500",
-                isTransparent: false
-              });
-            </script>
-          </div>
-        </div>
-
-        <!-- Economic Calendar -->
-        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div class="tradingview-widget-container" style="height: 500px;">
-            <div class="tradingview-widget-container__widget"></div>
-            <script src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async></script>
-            <script type="text/javascript">
-              new TradingView.widget({
-                ...$.Site.Data.widgets.events,
-                width: "100%",
-                height: "500",
-                isTransparent: false
-              });
-            </script>
-          </div>
+        <!-- Forex Overview -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Foreign Exchange</h2>
+            <div class="space-y-4">
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Major Pairs</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Track EUR/USD and GBP/USD - the world's most traded currency pairs
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Asian & Pacific</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Monitor USD/JPY and major Asian currency movements
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <span class="text-gray-600 font-medium">Commodity FX</span>
+                        <span class="text-sm text-blue-600">View Charts →</span>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500">
+                        Follow AUD/USD, USD/CAD - currencies linked to commodity prices
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Market Quotes Widget (Programmatic TradingView) -->
+    <div id="tv-market-quotes" class="bg-white rounded-lg shadow-sm p-6 mb-8 w-full h-[500px]"></div>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        tvReady(function() {
+          new TradingView.widget(Object.assign({},
+            $.Site.Data.widgets && $.Site.Data.widgets.market_quotes ? $.Site.Data.widgets.market_quotes : {},
+            {
+              type: "market_quotes",
+              container_id: "tv-market-quotes",
+              autosize: true,
+              isTransparent: false
+            }
+          ));
+        });
+      });
+    </script>
+
+    <!-- Stock Market Sector Performance (Screener) Widget (Programmatic TradingView) -->
+    <div id="tv-market-screener" class="bg-white rounded-lg shadow-sm p-6 mb-8 w-full h-[500px]"></div>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        tvReady(function() {
+          new TradingView.widget(Object.assign({},
+            $.Site.Data.widgets && $.Site.Data.widgets.screener ? $.Site.Data.widgets.screener : {},
+            {
+              type: "screener",
+              container_id: "tv-market-screener",
+              autosize: true,
+              isTransparent: false
+            }
+          ));
+        });
+      });
+    </script>
+
+    <!-- Economic Calendar Widget (Programmatic TradingView) -->
+    <div id="tv-market-events" class="bg-white rounded-lg shadow-sm p-6 mb-8 w-full h-[500px]"></div>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        tvReady(function() {
+          new TradingView.widget(Object.assign({},
+            $.Site.Data.widgets && $.Site.Data.widgets.events ? $.Site.Data.widgets.events : {},
+            {
+              type: "events",
+              container_id: "tv-market-events",
+              autosize: true,
+              isTransparent: false
+            }
+          ));
+        });
+      });
+    </script>
 </div>
 
 <!-- Add JavaScript for chart links -->

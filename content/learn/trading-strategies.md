@@ -1,6 +1,5 @@
 ---
 title: "Advanced Trading Strategies: Beyond Buying and Holding"
-date: 2025-05-24
 description: "Master advanced trading techniques including short selling, options, and sophisticated investment strategies"
 topics: ["Trading Strategies", "Short Selling", "Advanced Investing"]
 difficulty: ["Advanced"]

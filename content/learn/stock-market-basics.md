@@ -1,6 +1,5 @@
 ---
 title: "Understanding the Stock Market: A Beginner's Guide"
-date: 2025-05-24
 description: "Learn the fundamentals of how the stock market works and start your investment journey"
 topics: ["Stock Market Basics", "Investing Fundamentals"]
 difficulty: ["Beginner"]

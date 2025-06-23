@@ -1,6 +1,5 @@
 ---
 title: "Understanding Market Capitalization"
-date: 2025-05-23
 description: "Learn how market capitalization helps value companies and make investment decisions"
 topics: ["Stock Valuation", "Investment Basics"]
 difficulty: ["Intermediate"]

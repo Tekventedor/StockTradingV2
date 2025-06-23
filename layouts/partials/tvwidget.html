@@ -2,21 +2,19 @@
 {{- $height := .height | default "400" -}}
 {{- $width := .width | default "100%" -}}
 
-<div class="tradingview-widget-container" style="height: {{ $height }}px;">
-    <div class="tradingview-widget-container__widget"></div>
-
-    <script type="text/javascript">
-        var config = {{ dict
-            "symbol" $symbol
-            "width" $width
-            "height" $height
-            "locale" "en"
-            "dateRange" "12M"
-            "colorTheme" "light"
-            "isTransparent" true
-            "autosize" true
-            "largeChartUrl" ""
-        | jsonify | safeJS }};
-        new TradingView.widget(config);
-    </script>
-</div> 
+<div class="tradingview-widget-container" style="width: 100%; height: {{ $height }}px;">
+    <div class="tradingview-widget-container__widget w-full h-full"></div>
+</div>
+<script type="text/javascript">
+    var config = {
+        symbol: "{{ $symbol }}",
+        width: "{{ $width }}",
+        height: "{{ $height }}",
+        locale: "en",
+        dateRange: "12M",
+        colorTheme: "light",
+        isTransparent: true,
+        largeChartUrl: ""
+    };
+    new TradingView.widget(config);
+</script> 
