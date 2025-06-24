@@ -15,6 +15,6 @@ key_stats:
   pe_ratio: "~70"
   dividend_yield: "N/A"
   beta: "2.1"
----
+--- 
 
 Tesla is a leading electric vehicle and sustainable energy company. 

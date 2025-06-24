@@ -15,6 +15,6 @@ key_stats:
   pe_ratio: "~75"
   dividend_yield: "~0.04%"
   beta: "1.7"
----
+--- 
 
 NVIDIA is a leading designer of graphics processing units and AI chips. 

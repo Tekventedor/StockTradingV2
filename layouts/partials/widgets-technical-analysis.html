@@ -1,0 +1,16 @@
+<!-- TradingView: Market Statistics - Trading Volume Widget -->
+<div id="trading-volume-widget" class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+  {
+    "interval": "1D",
+    "width": "100%",
+    "isTransparent": true,
+    "height": 400,
+    "symbol": "NASDAQ:AAPL",  <!-- Replace with {{ .Params.symbol }} for dynamic symbol -->
+    "showIntervalTabs": true,
+    "locale": "en",
+    "colorTheme": "light"
+  }
+  </script>
+</div> 

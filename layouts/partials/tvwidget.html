@@ -5,7 +5,7 @@
 <div class="tradingview-widget-container" style="width: 100%; height: {{ $height }}px;">
     <div class="tradingview-widget-container__widget w-full h-full"></div>
 </div>
-<script type="text/javascript">
+    <script type="text/javascript">
     var config = {
         symbol: "{{ $symbol }}",
         width: "{{ $width }}",
@@ -16,5 +16,5 @@
         isTransparent: true,
         largeChartUrl: ""
     };
-    new TradingView.widget(config);
-</script> 
+        new TradingView.widget(config);
+    </script>

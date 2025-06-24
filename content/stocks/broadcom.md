@@ -15,6 +15,6 @@ key_stats:
   pe_ratio: "~28"
   dividend_yield: "~2%"
   beta: "1.2"
----
+--- 
 
 Broadcom is a global technology leader in semiconductor and infrastructure software solutions. 
