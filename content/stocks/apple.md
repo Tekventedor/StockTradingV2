@@ -1,21 +1,18 @@
 ---
-title: "Apple Inc. (AAPL)"
-exchange: NASDAQ
-symbol: AAPL
-date: 2025-05-23
-description: "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide."
-stocks: ["NASDAQ:AAPL"]
-sectors: ["Technology"]
-industries: ["Technology Hardware & Equipment"]
-market_caps: ["Large-cap"]
-risk_levels: ["Medium"]
-type: "stock"
-draft: false
+title: "Apple"
+description: "Apple Inc. is a global technology company known for its innovative products."
+sector: "Technology"
+marketCap: "$2.5T"
+exchange: "NASDAQ"
+symbol: "AAPL"
+categories: ["Technology", "Mega Cap", "Low Risk"]
+heroHeadline: "Apple Inc. (AAPL)"
+heroSubtitle: "Innovation that shapes the world. Explore Apple’s financials, charts, and more."
+heroCtaText: "View Official Site"
+heroCtaUrl: "https://www.apple.com/"
 ---
 
-## Company Overview
-
-Apple Inc. is a global technology leader that designs, manufactures, and markets a wide range of consumer electronics, software, and services. Founded in 1976, the company has become one of the world's most valuable companies through its innovative products and ecosystem.
+Apple Inc. is a global technology company that designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company is known for its iPhone, iPad, Mac, Apple Watch, and Apple TV products, as well as a range of software and services.
 
 ## Key Products & Services
 

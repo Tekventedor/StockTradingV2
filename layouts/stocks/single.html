@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ partial "learn-css.html" . }}
-{{ partial "hero-stocks.html" (dict "Title" .Title "Description" (print "Get the latest data, charts, and insights for " .Title ". Compare with peers or add to your watchlist.") "Params" (dict "ctaText" "See All Stocks" "ctaUrl" "/stocks/")) }}
+{{ partial "hero.html" . }}
 
 <div class="@container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
     <article class="bg-white rounded-lg shadow-sm overflow-hidden">
